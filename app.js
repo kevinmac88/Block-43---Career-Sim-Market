@@ -1,6 +1,7 @@
 import express from "express";
 import getUserFromToken from "#utils/getUserFromToken.js";
 import usersRouter from "#routers/users.js";
+import productsRouter from "#routers/products.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(getUserFromToken);
 
 //mount users router @ /users (where I have register & login POST routes)
 app.use("/users", usersRouter);
+app.use("/products", productsRouter);
 
 //catch all error handler (must come last)
 app.use((err, req, res, next) => {
