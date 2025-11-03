@@ -5,10 +5,10 @@ import {
   getOrderById,
   addProductToOrder,
   getProductsByOrderId,
-} from "#db/queries/orders.js";
-import { productExists } from "#db/queries/products.js";
-import requireUser from "#utils/requireUser.js";
-import requireBody from "#utils/requireBody.js";
+} from "../db/queries/orders.js";
+import { productExists } from "../db/queries/products.js";
+import requireUser from "../utils/requireUser.js";
+import requireBody from "../utils/requireBody.js";
 
 const router = express.Router();
 

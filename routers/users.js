@@ -1,8 +1,8 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import { createUser, getUserByUsername } from "#db/queries/users.js";
-import { createToken } from "#utils/jwt.js";
-import requireBody from "#utils/requireBody.js";
+import { createUser, getUserByUsername } from "../db/queries/users.js";
+import { createToken } from "../utils/jwt.js";
+import requireBody from "../utils/requireBody.js";
 
 //create router
 const router = express.Router();
@@ -11,7 +11,7 @@ const router = express.Router();
 router.post(
   "/register",
   requireBody(["username", "password"]),
-  async (requireBody, resizeBy, next) => {
+  async (req, res, next) => {
     try {
       const { username, password } = req.body;
 

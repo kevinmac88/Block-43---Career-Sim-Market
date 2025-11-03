@@ -1,4 +1,4 @@
-import db from "#db/client";
+import db from "../client.js";
 
 //create new product
 export async function createProduct(title, description, price) {

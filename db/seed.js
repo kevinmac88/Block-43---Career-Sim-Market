@@ -1,7 +1,7 @@
-import db from "#db/client";
-import { createUser } from "#db/queries/users";
-import { createProduct } from "#db/queries/products";
-import { createOrder, addProductToOrder } from "#db/queries/orders";
+import db from "./client.js";
+import { createUser } from "./queries/users.js";
+import { createProduct } from "./queries/products.js";
+import { createOrder, addProductToOrder } from "./queries/orders.js";
 
 await db.connect();
 await seed();

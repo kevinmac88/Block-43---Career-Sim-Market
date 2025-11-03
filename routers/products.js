@@ -1,7 +1,7 @@
 import express from "express";
-import { getAllProducts, getProductById } from "#db/queries/products.js";
-import { getOrdersByUserAndProduct } from "#db/queries/orders.js";
-import requireUser from "#utils/requireUser.js";
+import { getAllProducts, getProductById } from "../db/queries/products.js";
+import { getOrdersByUserAndProduct } from "../db/queries/orders.js";
+import requireUser from "../utils/requireUser.js";
 
 const router = express.Router();
 

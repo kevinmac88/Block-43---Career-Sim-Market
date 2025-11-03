@@ -1,4 +1,4 @@
-import db from "#db/client";
+import db from "../client.js";
 
 export async function createOrder(userid, date, note = null) {
   const {
@@ -28,7 +28,7 @@ export async function addProductToOrder(orderId, productId, quantity) {
 }
 
 //get all orders by user
-export async function getOrderByUserId(userId) {
+export async function getOrdersByUserId(userId) {
   const { rows } = await db.query(
     `
         SELECT * From orders
@@ -78,4 +78,17 @@ export async function isOrderOwnedByUser(orderId, userId) {
     [orderId, userId]
   );
   return result.owned;
+}
+
+//get product by order id
+export async function getProductsByOrderId(orderId) {
+  const { rows } = await db.query(
+    `SELECT p.*, op.quantity
+         FROM products p
+         JOIN orders_products op ON p.id = op.product_id
+         WHERE op.order_id = $1
+         ORDER BY p.id`,
+    [orderId]
+  );
+  return rows;
 }

@@ -1,8 +1,8 @@
 import express from "express";
-import getUserFromToken from "#utils/getUserFromToken.js";
-import usersRouter from "#routers/users.js";
-import productsRouter from "#routers/products.js";
-import ordersRouter from "#routers/orders.js";
+import getUserFromToken from "./middleware/getUserFromToken.js";
+import usersRouter from "./routers/users.js";
+import productsRouter from "./routers/products.js";
+import ordersRouter from "./routers/orders.js";
 
 const app = express();
 
